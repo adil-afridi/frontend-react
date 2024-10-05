@@ -54,7 +54,7 @@ const CrudApp = () => {
     e.preventDefault();
     if (isEditing) {
       // Update existing item
-      await fetch(`http://localhost:3000/items/${currentId}`, {
+      await fetch(`https://backend-node-wheat.vercel.app/api/users/${currentId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const CrudApp = () => {
       );
     } else {
       // Add new item
-      const response = await fetch("http://localhost:3000/items", {
+      const response = await fetch("https://backend-node-wheat.vercel.app/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const CrudApp = () => {
 
   // Delete an item
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/items/${id}`, {
+    await fetch(`https://backend-node-wheat.vercel.app/api/users/${id}`, {
       method: "DELETE",
     });
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
